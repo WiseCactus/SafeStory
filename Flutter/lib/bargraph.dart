@@ -3,8 +3,7 @@ import 'package:flutter/material.dart';
 
 class Bar extends StatelessWidget {
   final double width;
-  final String title;
-  Bar({this.width, this.title});
+  Bar({this.width});
   @override
   Widget build(BuildContext context) {
     return Padding(

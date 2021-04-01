@@ -16,6 +16,7 @@ class ResultsScreen extends StatelessWidget {
   Widget build(BuildContext context) {
 
     print(data);
+    print((data['Explicit_Lack_Of_Consent']));
 
     return Scaffold(
       backgroundColor: kGreen,
@@ -65,21 +66,19 @@ class ResultsScreen extends StatelessWidget {
                       crossAxisAlignment: CrossAxisAlignment.end,
                       children: [
                         BarLabel(label: "Explicit Lack of Consent"),
-                        BarLabel(label: "Abuse of Authority"),
                         BarLabel(label: "Force"),
-                        BarLabel(label: "Unconscious"),
                         BarLabel(label: "Minor Injury"),
+                        BarLabel(label: "Not Conscious"),
                       ],
                     ),
                   ),
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Bar(width: 120),
-                      Bar(width: 70, title: "Force"),
-                      Bar(width: 20, title: "Minor"),
-                      Bar(width: 10, title: "Threat"),
-                      Bar(width: 10, title: "Minor Injury"),
+                      Bar(width: 100 * data['Explicit_Lack_Of_Consent'].toDouble()),
+                      Bar(width: 100 * data['Force'].toDouble()),
+                      Bar(width: 100 * data['Minor_Injury'].toDouble()),
+                      Bar(width: 100 * data['Not_Conscious'].toDouble()),
                     ],
                   ),
                 ],

@@ -3,7 +3,6 @@ import 'package:QA/error_screen.dart';
 import 'package:QA/results_screen.dart';
 import 'package:QA/simple_textformfield.dart';
 import 'package:flutter/material.dart';
-import 'package:modal_progress_hud/modal_progress_hud.dart';
 import 'colored_button.dart';
 import 'dart:convert';
 import 'constants.dart';
