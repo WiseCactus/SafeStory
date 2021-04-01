@@ -5,6 +5,6 @@ Safe story seeks to address Goal 5: Gender Equality and Women’s Empowerment fr
 
 Front end of application
 
-## /model
+## /model_def
 
 Back end of application with a python server and language processing model
