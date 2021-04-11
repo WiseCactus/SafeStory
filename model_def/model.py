@@ -100,50 +100,6 @@ def calculateConsent(inputs):
 # calculateConsent(inputs)
 
 
-# In[27]:
-
-
-# this one needs work....
-
-def calculateAuthority(inputs):
-    file = pd.read_csv('savedd1.csv')
-    file = file.fillna(0)
-
-    # stemmer = SnowballStemmer("english")
-
-    inputs = remove_symbols(inputs)
-    inputs = inputs.lower()
-    inputs = stemmed(inputs)
-    inputs = [inputs]
-
-    file = file.sort_values(by=['Authority'])
-    file = file.iloc[500:]
-
-    file = file.reset_index(drop=True)
-
-    X = file.clean
-    y = file['Authority']
-
-    bagger = text.TfidfVectorizer(min_df=1, ngram_range=(1, 1))
-    ns = RandomOverSampler(sampling_strategy='minority')
-    ms = RandomUnderSampler(sampling_strategy='majority')
-
-    lr = SGDClassifier(loss='log', n_jobs=-1, alpha=5e-2)
-
-    X_train = bagger.fit_transform(X)
-    S = bagger.transform(inputs)
-
-    lr.fit(X_train, y)
-    pred = lr.predict(S)
-    return pred
-
-
-# In[28]:
-
-
-# inputs = "Sexual assault by my godfather, my parents trusted me into his care often as they were going through a
-# divorce" calculateAuthority(inputs)
-
 # In[29]:
 
 
